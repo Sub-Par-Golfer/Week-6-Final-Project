@@ -11,10 +11,10 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        'service_yzkv3wp', // Replace with your EmailJS Service ID
-        'template_uheqp5t', // Replace with your EmailJS Template ID
+        'service_yzkv3wp', 
+        'template_uheqp5t',
         event.target,
-        'wciuI5vtvYyfew6j9' // Replace with your EmailJS Public Key
+        'wciuI5vtvYyfew6j9'
       )
       .then(() => {
         loadingOverlay.classList.remove('modal__overlay--visible');

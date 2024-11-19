@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import emailjs from '@emailjs/browser';
 
-emailjs.init('wciuI5vtvYyfew6j9'); // Replace with your public key
+emailjs.init('wciuI5vtvYyfew6j9');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

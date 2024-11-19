@@ -19,7 +19,7 @@ const MovieSearch = () => {
         );
         const data = await response.json();
         setMovies(data.Search || []);
-        setCurrentPage(1); // Reset to first page
+        setCurrentPage(1);
       } catch (error) {
         console.error("Error fetching movies:", error);
       } finally {
@@ -68,7 +68,7 @@ const MovieSearch = () => {
     setCurrentPage(pageNumber);
   };
 
-  // Pagination Logic
+  // Pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentMovies = movies.slice(indexOfFirstItem, indexOfLastItem);

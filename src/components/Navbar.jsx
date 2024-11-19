@@ -20,7 +20,6 @@ const Navbar = ({ toggleModal }) => {
           <li
             className="nav__link nav__link--primary"
             onClick={() => {
-              console.log("Contact button clicked"); // Debugging
               toggleModal();
             }}
           >

@@ -1,18 +1,15 @@
 import axios from 'axios';
 
-// Base URL from environment variables
 const API_URL = process.env.REACT_APP_API_URL;
 
 if (!API_URL) {
     console.error("API_URL is not defined. Make sure it's set in your .env file.");
 }
 
-// Axios instance for reusable configurations
 const apiClient = axios.create({
-    baseURL: API_URL, // Base URL already includes the API key
+    baseURL: API_URL,
 });
 
-// Fetch movies based on a search query
 export const fetchMovies = async (query, page = 1) => {
     if (!query) {
         console.error("Query parameter is required to fetch movies.");
@@ -22,18 +19,17 @@ export const fetchMovies = async (query, page = 1) => {
     try {
         const response = await apiClient.get("", {
             params: {
-                s: query, // Search by title
-                page, // Pagination
+                s: query,
+                page,
             },
         });
-        return response.data.Search || []; // Return the "Search" array
+        return response.data.Search || [];
     } catch (error) {
         console.error("Error fetching movies:", error.message);
         throw error;
     }
 };
 
-// Fetch details for a specific movie by IMDb ID
 export const fetchMovieDetails = async (movieId) => {
     if (!movieId) {
         console.error("Movie ID is required to fetch movie details.");
@@ -43,7 +39,7 @@ export const fetchMovieDetails = async (movieId) => {
     try {
         const response = await apiClient.get("", {
             params: {
-                i: movieId, // Search by IMDb ID
+                i: movieId,
             },
         });
         return response.data;

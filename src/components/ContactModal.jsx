@@ -4,7 +4,6 @@ import React from "react";
 const ContactModal = ({ closeModal }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Add form submission logic here
         closeModal();
     };
 

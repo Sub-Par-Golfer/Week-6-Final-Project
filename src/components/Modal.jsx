@@ -9,7 +9,7 @@ const Modal = ({ toggleModal }) => {
           &times;
         </button>
         <h3>Contact Us</h3>
-        <p>Please leave us a message if there are any modifications you'd like to see!</p>
+        <p>Please leave me a message if there are any modifications you'd like to see!</p>
         <form>
           <label>
             Name:

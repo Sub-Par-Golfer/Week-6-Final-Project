@@ -14,12 +14,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Start the curtain fade-out after 5 seconds
+    // Start the curtain fade-out
     const timer1 = setTimeout(() => {
       setFadeOut(true);
     }, 5000);
 
-    // Show the content after the fade-out animation completes (2 seconds)
+    // Show the content after the fade-out animation (2 seconds)
     const timer2 = setTimeout(() => {
       setShowContent(true);
     }, 7000);
@@ -49,7 +49,6 @@ const Home = () => {
         </div>
       )}
 
-      {/* Content to reveal after curtains */}
       {showContent && (
         <section id="landing">
           <div className="header__container">
