@@ -1,50 +1,84 @@
 .nav__container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.logo__img {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+.logo__name {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* Navigation List */
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav__link {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: blue;
+  cursor: pointer;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+  color: darkorange;
+}
+
+.nav__link--primary {
+  border: 2px solid blue;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.nav__link--primary:hover {
+  background-color: blue;
+  color: white;
+}
+
+/* Mobile Styling */
+@media (max-width: 650px) {
+  .nav__link:not(.nav__link--primary) {
+    display: none;
+  }
+
+  .nav__container {
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
-  .logo__img {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
+
   .logo__name {
-    margin-left: 10px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #555;
-  }
-  
-  .nav__list {
+    margin: 10px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    list-style: none;
   }
-  
-  .nav__link {
-    margin: 0 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: blue;
-    cursor: pointer;
+
+  .nav__list {
+    justify-content: center;
+    width: 100%;
   }
-  
-  .nav__link:hover {
-    text-decoration: underline;
-    color: darkorange;
-  }
-  
-  .nav__link--primary {
-    border: 2px solid blue;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-  
-  .nav__link--primary:hover {
-    background-color: blue;
-    color: white;
-  }
+}

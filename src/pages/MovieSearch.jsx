@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./MovieSearch.css";
 
 const MovieSearch = () => {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sortOption, setSortOption] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+
+  const handleMovieClick = (movie) => {
+    navigate(`/movie/${movie.imdbID}`, {
+      state: { query, currentPage },
+    });
+  };
 
   const fetchMovies = async (title) => {
     setLoading(true);
@@ -109,6 +116,7 @@ const MovieSearch = () => {
                 key={movie.imdbID}
                 to={`/details/${movie.imdbID}`}
                 className="movie-card-link"
+                onClick={() => handleMovieClick(movie)}
               >
                 <div className="movie-card">
                   {movie.Poster !== "N/A" ? (

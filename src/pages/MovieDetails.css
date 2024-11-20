@@ -81,3 +81,69 @@ body {
 .movie-details-actions .btn:hover {
   background-color: darkorange;
 }
+/* Movie Details */
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.movie-poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.movie-poster img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.movie-info h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  font-size: 16px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 650px) {
+  .movie-details {
+    padding: 10px;
+    width: 90%;
+  }
+
+  .movie-poster img {
+    max-width: 200px;
+  }
+
+  .movie-info h1 {
+    font-size: 20px;
+  }
+
+  .movie-info p {
+    font-size: 14px;
+  }
+}

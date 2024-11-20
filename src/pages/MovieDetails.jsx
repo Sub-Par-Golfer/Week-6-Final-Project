@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { query, currentPage } = location.state || {};
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+  const handleBackToSearch = () => {
+    navigate("/search", { state: { query, currentPage } });
+  };
+
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -53,9 +60,9 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className="movie-details-actions">
-        <a href="/search">
-          <button className="btn">Back to Search</button>
-        </a>
+        <button className="btn" onClick={handleBackToSearch}>
+          Back to Search
+        </button>
       </div>
     </div>
   );

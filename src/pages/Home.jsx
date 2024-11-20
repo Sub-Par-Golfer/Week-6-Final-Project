@@ -40,7 +40,7 @@ const Home = () => {
         <div className={`curtain-container ${fadeOut ? "fade-out" : ""}`}>
           <video
             className="curtain-video"
-            src="/red_curtains.mp4" // Ensure this path is correct for your project
+            src="/red_curtains.mp4"
             autoPlay
             muted
             playsInline
